@@ -26,6 +26,10 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
+      - name: Setup Quartz Plugins Cache
+        run: |
+          mkdir -p .quartz/plugins
+          node -e 'const fs = require("fs"); fs.writeFileSync(".quartz/plugins/index.ts", "export const CustomOgImagesEmitterName = \"CustomOgImages\";\nexport default {};\n");'
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
