@@ -1,5 +1,5 @@
 ---
-title: 目錄
+title: brainMLE的競程筆記
 ---
 ## 演算法資結觀念整理
 
