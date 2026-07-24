@@ -34,135 +34,135 @@ vector<int> an;
 
 bool odd(int l,int r){
 
-cout<<r-l+1<<'\n';
+    cout<<r-l+1<<'\n';
 
-for(int i=l;i<=r;++i) cout<<i<<' ';
+    for(int i=l;i<=r;++i) cout<<i<<' ';
 
-cout<<flush;
+    cout<<flush;
 
-string s;cin>>s;
+    string s;cin>>s;
 
-if(s=="correct") exit(0);
+    if(s=="correct") exit(0);
 
-if(s=="odd") return true;
+    if(s=="odd") return true;
 
-return false;
+    return false;
 
 }
 
 bool odd_(int l,int r,vector<int> &v){
 
-cout<<r-l+1<<'\n';
+    cout<<r-l+1<<'\n';
 
-for(int i=l;i<=r;++i){
+    for(int i=l;i<=r;++i){
 
-cout<<v[i]<<' ';
+        cout<<v[i]<<' ';
 
-}
+    }
 
-cout<<flush;
+    cout<<flush;
 
-string s;cin>>s;
+    string s;cin>>s;
 
-if(s=="correct") exit(0);
+    if(s=="correct") exit(0);
 
-if(s=="odd") return true;
+    if(s=="odd") return true;
 
-return false;
+    return false;
 
 }
 
 void solve(vector<int> &v){
 
-int len=v.size();
+    int len=v.size();
 
-int le=0,ri=len-1;
+    int le=0,ri=len-1;
 
-while(le<=ri){
+    while(le<=ri){
 
-int mid=le+(ri-le)/2;
+        int mid=le+(ri-le)/2;
 
-if(odd_(le,mid,v)) ri=mid-1;
+        if(odd_(le,mid,v)) ri=mid-1;
 
-else le=mid+1;
+        else le=mid+1;
 
-}
+    }
 
-an.push_back(v[le]);
+    an.push_back(v[le]);
 
 }
 
 signed main(){
 
-ios::sync_with_stdio(0),cin.tie(0);
+    ios::sync_with_stdio(0),cin.tie(0);
 
-int le=1,ri=N;
+    int le=1,ri=N;
 
-while(le<=ri){
+    while(le<=ri){
 
-int mid=le+(ri-le)/2;
+        int mid=le+(ri-le)/2;
 
-if(odd(le,mid)) ri=mid-1;
+        if(odd(le,mid)) ri=mid-1;
 
-else le=mid+1;
+        else le=mid+1;
 
-}
+    }
 
-an.push_back(le);
+    an.push_back(le);
 
-int id;
+    int id;
 
-for(int i=0;i<8;++i){
+    for(int i=0;i<8;++i){
 
-vector<int> v;
+        vector<int> v;
 
-for(int j=1;j<=N;++j){
+        for(int j=1;j<=N;++j){
 
-if(j==an[0]) continue;
+            if(j==an[0]) continue;
 
-if((j&(1<<i))) v.push_back(j);
+            if((j&(1<<i))) v.push_back(j);
 
-}
+        }
 
-cout<<v.size()<<'\n';
+        cout<<v.size()<<'\n';
 
-for(int x:v) cout<<x<<' ';
+        for(int x:v) cout<<x<<' ';
 
-cout<<flush;
+        cout<<flush;
 
-string s;cin>>s;
+        string s;cin>>s;
 
-if(s=="correct") exit(0);
+        if(s=="correct") exit(0);
 
-if(s=="even") continue;
+        if(s=="even") continue;
 
-id=i;
+        id=i;
 
-break;
+        break;
 
-}
+    }
 
-vector<int> v1,v2;
+    vector<int> v1,v2;
 
-for(int i=1;i<=N;++i){
+    for(int i=1;i<=N;++i){
 
-if(i==an[0]) continue;
+        if(i==an[0]) continue;
 
-if(i&(1<<id)) v2.push_back(i);
+        if(i&(1<<id)) v2.push_back(i);
 
-else v1.push_back(i);
+        else v1.push_back(i);
 
-}
+    }
 
-solve(v1);
+    solve(v1);
 
-solve(v2);
+    solve(v2);
 
-cout<<3<<'\n';
+    cout<<3<<'\n';
 
-for(int a:an) cout<<a<<' ';
+    for(int a:an) cout<<a<<' ';
 
-cout<<flush;
+    cout<<flush;
 
 }
 ```
