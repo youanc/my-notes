@@ -1,5 +1,5 @@
 ---
-title: brainMLE's coding blog
+title: brainMLE's Coding Blog
 ---
 ## 演算法資結觀念整理
 

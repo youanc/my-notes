@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "brainMLE的競程筆記"
+  pageTitle: "brainMLE's Coding Blog"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
